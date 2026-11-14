@@ -11,21 +11,11 @@ const prices = {
   "Ghost Burger": 120
 };
 
-const statusDisplay = document.getElementById("status");
+const status = document.getElementById("status");
 const result = document.getElementById("result");
-const greetingResult = document.getElementById("greetingResult");
 
 function displayStatus() {
-  statusDisplay.textContent = isOpen ? "We are OPEN!" : "We are CLOSED!";
-}
-
-function showPersonalGreeting() {
-  customerName = document.getElementById("customer").value.trim();
-  if (!customerName) {
-    greetingResult.textContent = "Please enter your name first to get a greeting!";
-    return;
-  }
-  greetingResult.textContent = "Happy Halloween, " + customerName + "! Welcome to Spooky Bites 🎃";
+  status.textContent = isOpen ? "We are OPEN!" : "We are CLOSED!";
 }
 
 function toggleStatus() {
@@ -36,6 +26,15 @@ function toggleStatus() {
   } else {
     result.textContent = "Notice: The restaurant is now OPEN!";
   }
+}
+
+function showPersonalGreeting() {
+  customerName = document.getElementById("customer").value.trim();
+  if (!customerName) {
+    result.textContent = "Please enter your name first!";
+    return;
+  }
+  result.textContent = "Happy Halloween, " + customerName + "! Welcome to Spooky Bites! 🎃👻";
 }
 
 function getRecommendation(totalAmount) {
@@ -64,7 +63,7 @@ function placeOrder() {
   }
 
   if (!isOpen) {
-    result.textContent = "Sorry! The restaurant is closed. You cannot place an order right now.";
+    result.textContent = "Sorry! The restaurant is closed.";
     return;
   }
 
@@ -83,7 +82,7 @@ function placeOrder() {
   const confirmOrder = confirm("Hello " + customerName + ", confirm your order of " + quantity + " " + selectedMeal + "(s) for ₱" + total + "?");
   
   if (!confirmOrder) {
-    result.textContent = "Order cancelled by customer.";
+    result.textContent = "Order process cancelled.";
     return;
   }
 
@@ -99,6 +98,7 @@ function showMenuMessage() {
   alert("Welcome to " + restaurantName + "! Choose your spooky meal.");
 }
 
+// Initializing Status and Event Listeners
 displayStatus();
 
 document.getElementById("orderBtn").addEventListener("click", placeOrder);
