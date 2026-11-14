@@ -34,7 +34,7 @@ function showPersonalGreeting() {
     result.textContent = "Please enter your name first!";
     return;
   }
-  result.textContent = "Happy Halloween, " + customerName + "! Welcome to Yummy Spooky Bites! 🕸🦇";
+  result.textContent = "Happy Halloween, " + customerName + "! Welcome to Yummy Spooky Bites! 🦇";
 }
 
 function getRecommendation(totalAmount) {
