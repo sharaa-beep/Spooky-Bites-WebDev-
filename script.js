@@ -28,13 +28,13 @@ function toggleStatus() {
   }
 }
 
-function showPersonalGreeting() {
-  customerName = document.getElementById("customer").value.trim();
-  if (!customerName) {
-    result.textContent = "Please enter your name first!";
-    return;
-  }
-  result.textContent = "Happy Halloween, " + customerName + "! Welcome to Spooky Bites! 🎃👻";
+function generateGreeting() {
+    const name = customerInput.value.trim();
+    if (!name) {
+        alert("Please enter your name first!");
+        return;
+    }
+    alert(`Happy Halloween, ${name}! Welcome to ${restaurantName}! 🎃`);
 }
 
 function getRecommendation(totalAmount) {
