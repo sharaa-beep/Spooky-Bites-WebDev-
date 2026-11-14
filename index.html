@@ -21,7 +21,7 @@
     <h1>Welcome to Spooky Bites! 🧛‍♀️</h1>
     <p>Frightfully delicious food for Halloween night.</p>
     <p id="status">Checking restaurant status...</p>
-    <button id="toggleStatusBtn">Toggle Resto Status</button>
+    <button type="button" id="toggleStatusBtn">Toggle Resto Status</button>
   </header>
 
   <main>
@@ -48,7 +48,8 @@
       <h2>Place Your Order</h2>
       <input id="customer" type="text" placeholder="Enter your name">
       
-      <button id="greetingBtn">Get a Spooky Greeting!</button>
+      <button type="button" id="greetingBtn">Get a Spooky Greeting!</button>
+      <p id="greetingResult" style="margin: 8px 0; font-weight: bold; color: #7136a5;"></p>
 
       <select id="meal">
         <option value="Spider Pizza">Spider Pizza - ₱150</option>
@@ -58,7 +59,7 @@
 
       <input id="quantity" type="number" min="1" value="1" placeholder="Quantity">
       
-      <button id="orderBtn">Order Now!</button>
+      <button type="button" id="orderBtn">Order Now!</button>
       <p id="result">Your order summary will appear here.</p>
     </section>
   </main>
