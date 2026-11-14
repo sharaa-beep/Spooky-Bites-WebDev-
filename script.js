@@ -28,13 +28,13 @@ function toggleStatus() {
   }
 }
 
-function generateGreeting() {
-    const name = customerInput.value.trim();
-    if (!name) {
-        alert("Please enter your name first!");
-        return;
-    }
-    alert(`Happy Halloween, ${name}! Welcome to ${restaurantName}! 🎃`);
+function showPersonalGreeting() {
+  customerName = document.getElementById("customer").value.trim();
+  if (!customerName) {
+    result.textContent = "Please enter your name first!";
+    return;
+  }
+  result.textContent = "Happy Halloween, " + customerName + "! Welcome to Yummy Spooky Bites! 🕸🦇";
 }
 
 function getRecommendation(totalAmount) {
@@ -43,7 +43,7 @@ function getRecommendation(totalAmount) {
   } else if (totalAmount >= 200) {
     return " Recommendation: Try pairing it with our Monster Eyeball Cupcakes!";
   } else {
-    return " Recommendation: Upgrade your meal with extra spooky cheese!";
+    return " Recommendation: Upgrade your meal with extra spooky creamy cheese!";
   }
 }
 
@@ -72,6 +72,7 @@ function placeOrder() {
   let discount = 0;
   let discountMessage = "";
 
+
   if (subtotal >= 300) {
     discount = subtotal * 0.10;
     discountMessage = " (Includes a 10% spooky discount!)";
@@ -98,7 +99,6 @@ function showMenuMessage() {
   alert("Welcome to " + restaurantName + "! Choose your spooky meal.");
 }
 
-// Initializing Status and Event Listeners
 displayStatus();
 
 document.getElementById("orderBtn").addEventListener("click", placeOrder);
