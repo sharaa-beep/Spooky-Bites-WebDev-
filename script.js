@@ -11,9 +11,9 @@ const prices = {
   "Ghost Burger": 120
 };
 
-
 const statusDisplay = document.getElementById("status");
 const result = document.getElementById("result");
+const greetingResult = document.getElementById("greetingResult");
 
 function displayStatus() {
   statusDisplay.textContent = isOpen ? "We are OPEN!" : "We are CLOSED!";
@@ -22,10 +22,10 @@ function displayStatus() {
 function showPersonalGreeting() {
   customerName = document.getElementById("customer").value.trim();
   if (!customerName) {
-    result.textContent = "Please enter your name first to get a greeting!";
+    greetingResult.textContent = "Please enter your name first to get a greeting!";
     return;
   }
-  result.textContent = "Happy Halloween, " + customerName + "! Welcome to Spooky Bites 🎃";
+  greetingResult.textContent = "Happy Halloween, " + customerName + "! Welcome to Spooky Bites 🎃";
 }
 
 function toggleStatus() {
